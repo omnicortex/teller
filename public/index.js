@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const dotenv = require('dotenv');
   var tellerConnect = TellerConnect.setup({
     //   environment: "development"
-    applicationId: "APPLICATION_ID",
+    applicationId: process.env.APPLICATION_ID,
     onInit: function () {
       console.log("Teller Connect has initialized");
     },

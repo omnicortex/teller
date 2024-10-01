@@ -7,12 +7,17 @@ from colored import fg, bg, attr
 import pandas as pd
 import click
 import warnings
+import os
+from dotenv import load_dotenv
 
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
+load_dotenv()
+
+MY_ENV_VAR = os.getenv('MY_ENV_VAR')
 # use certificate and private key, replace with your own ones
-certificate_file = "PATH_TO_CERTIFICATE"
-pk_file = "PATH_TO_PRIVATE_KEY"
+certificate_file = os.getenv('PATH_TO_CERTIFICATE')
+pk_file = os.getenv('PATH_TO_PRIVATE_KEY')
 context = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
 context.load_cert_chain(certfile=certificate_file, keyfile=pk_file)
 conn = http.client.HTTPSConnection("api.teller.io", port=443, context=context)
