@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const dotenv = require('dotenv');
-  dotenv.config({ path: '../.env' });
+//  const dotenv = require('dotenv');
+//  dotenv.config({ path: '../.env' });
 
   var tellerConnect = TellerConnect.setup({
     //   environment: "development"
