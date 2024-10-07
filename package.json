@@ -1,8 +1,8 @@
 {
   "name": "teller",
   "version": "0.1.0",
-  "main": "app.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
