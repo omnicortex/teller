@@ -8,8 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     onSuccess: function (enrollment) {
       console.log("User enrolled successfully", enrollment.accessToken);
-      console.log("Enrollment ID", enrollment.enrollment.id, enrollment.enrollment);
-      postCredentials(enrollment.accessToken, enrollment.enrollment);
+      postCredentials(enrollment.accessToken, enrollment.enrollment, enrollment.user);
     },
     onExit: function () {
       console.log("User closed Teller Connect");
@@ -23,13 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function postCredentials(accessToken, enrollment_id) {
+function postCredentials(accessToken, enrollment, user) {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
   var raw = JSON.stringify({
       "token": accessToken,
-      "enrollmentId": enrollment_id
+      "institution": enrollment.institution.name,
+      "enrollmentId": enrollment.id,
+      "userId": user.id
   });
 
   var requestOptions = {
