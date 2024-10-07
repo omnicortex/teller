@@ -34,11 +34,11 @@ Retrieve savings/checking/credit card account details from selected US financial
 
 2.  Replace `PATH_TO_CERTIFICATE` and `PATH_TO_PRIVATE_KEY` in `teller.py` with the paths of the certificate and private key you downloaded from Teller
 
-3.  Replace `TELLER_APP_ID` with the `appId` of your own Teller instance
+3.  Replace `APPLICATION_ID` in `index.js` with the `appId` of your own Teller instance
 
 ### Authorize Your Bank Account
 
-1. Authorize Teller API to access your/your client's bank account by visiting `index.html` and following the instrunctions (you may use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) plugin in [VS Code](https://code.visualstudio.com/) to open the frontend UI locally)
+1. Authorize Teller API to access your/your client's bank account by visiting `index.html` and following the instructions (you may use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) plugin in [VS Code](https://code.visualstudio.com/) to open the frontend UI locally)
 
 2. Open the developer console (press `F12` and navigate to "Console"), you will find the authorization token for this account
 
