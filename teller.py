@@ -119,4 +119,7 @@ def main():
         except KeyboardInterrupt:
             break
 
-main()
+if __name__ == '__main__':
+    # This doesn't run on import
+    # It only runs when the module is run directly
+    main()
